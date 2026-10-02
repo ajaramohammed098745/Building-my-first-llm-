@@ -12,5 +12,5 @@ for i in range(10):
     new_weight = weight-learning_rate * gradient
 
 
-    print(f"Prediction:{prediction:4f}",f"Error:{error:4f}" ,f"Loss:{loss:4f}" ,f"New_Weight:{weight:4f}")
+    print(f"Prediction:{prediction:.4f}",f"Error:{error:.4f}" ,f"Loss:{loss:.4f}" ,f"New_Weight:{weight:.4f}")
     weight = new_weight
