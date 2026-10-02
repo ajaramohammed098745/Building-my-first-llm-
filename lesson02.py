@@ -30,27 +30,27 @@ for step in range(1, steps + 1):
     for x, y_true in training_data:
         
         # TODO A: Predict the output using the current weight
-        y_pred = ...
+        y_pred = weight * x
         
         # TODO B: Calculate the Squared Error Loss for this example
-        loss = ...
+        loss = (y_pred - y_true)**2
         total_loss += loss
         
         # TODO C: Calculate the Gradient (derivative of loss w.r.t weight)
         # Hint: dLoss/dWeight = 2 * x * (y_pred - y_true)
-        gradient = ...
+        gradient = 2 * x * (y_pred - y_true)
         total_gradient += gradient
         
     # TODO D: Calculate the average loss and average gradient across all samples
-    avg_loss = ...
-    avg_gradient = ...
+    avg_loss = total_loss / n_samples
+    avg_gradient = total_gradient / n_samples
     
     # TODO E: Update the weight parameter using the average gradient and learning rate
-    weight = ...
+    weight = weight - learning_rate * avg_gradient
     
     # TODO F: Print the progress metrics. 
     # Requirements: step to 2 d.p., weight, avg loss, and avg gradient to 4 d.p.
-    print(...)
+    print(f"Weight:{weight:.2f}", f"Avg loss:{avg_loss:.2f}", f"Avg gradient:{avg_gradient:.4f}")
 
 
 # =====================================================================
@@ -61,5 +61,5 @@ test_inputs = [6.0, 7.0, 10.0, 20.0]
 
 for x_test in test_inputs:
     # TODO G: Predict the output for the test inputs using your trained weight
-    y_test_pred = ...
+    y_test_pred = weight * x_test
     print(f"Input: {x_test:.1f} -> Predicted Output: {y_test_pred:.4f}")
