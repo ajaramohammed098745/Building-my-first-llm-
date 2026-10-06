@@ -6,7 +6,6 @@ training_data = [
     (5.0, 17.0)
 ]
 
-<<<<<<< HEAD
 weight = 0.5
 learning_rate = 0.01
 bias = 1
@@ -41,8 +40,6 @@ for x_test in test_inputs:
     # TODO G: Predict the output for the test inputs using your trained weight
     y_test_pred = weight * x_test
     print(f"Input: {x_test:.1f} -> Predicted Output: {y_test_pred:.4f}")
-=======
 
 
->>>>>>> 1115814edded4288c8a9fa4ae8d744d93ba8707f
 
